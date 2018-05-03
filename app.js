@@ -19,23 +19,25 @@ function loadWord(listOfWords){
         // returns randomly selected car
         return words;
         
-
-
-
-
-
         // var carOne = loadWord();
         // words.splice(index, 1);
 
 
         //document.getElementById('guess-word' + i).textContent = carOne;
 
-        // return words;
     // }
 }
+var car = words;
+console.log(words.length);
 
-// var index = getRandomIndex(words.length);
+function guess() {
+    var carString = car.length;
+
+
+
+}
 
 function getRandomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
+
