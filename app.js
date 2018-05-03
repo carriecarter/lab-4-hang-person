@@ -8,16 +8,15 @@ function loadWord(listOfWords){
     // for(i = 0; i > 5; i++) {
         
         var index = getRandomIndex(listOfWords.length);
-        console.log(words);
-
-
-        var words = listOfWords[index];
+        
+        var car = listOfWords[index];
         
         // removes car from array
         listOfWords.splice(index, 1);
-
+        
         // returns randomly selected car
-        return words;
+        console.log(car);
+        return car;
         
         // var carOne = loadWord();
         // words.splice(index, 1);
@@ -27,8 +26,7 @@ function loadWord(listOfWords){
 
     // }
 }
-var car = words;
-console.log(words.length);
+
 
 function guess() {
     var carString = car.length;
