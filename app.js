@@ -26,7 +26,7 @@ function loadWord(){
 
 }
 
-
+//testing pull request changes HEYYYYYY
 
 
 function getRandomIndex(max) {
