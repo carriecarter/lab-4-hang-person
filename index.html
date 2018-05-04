@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,8 +18,17 @@
 
     <!-- letter blanks --> 
     <div id="guess-word">
-        <button onclick = "loadWord()">Guess Letter</button>
+
+        <p id="letter-0"></p>
+        <p id="letter-1"></p>
+        <p id="letter-2"></p>
+        <p id="letter-3"></p>
+        <p id="letter-4"></p>
+        <p id="letter-5"></p>
+        <p id="letter-6"></p>
+        
         <p id="car-letters"></p>
+        <button onclick = "loadWord()">Start Game!</button>
     </div>
 
     <!-- guessed letters & number of guesses-->
@@ -30,7 +38,9 @@
     
     <!-- input -->
     <div>
-
+        <h3>Guess Letter here ===></h3>
+        <input type="text" id="guess-box">
+    
     </div>
     <script src="words.js"></script>
     <script src="app.js"></script>
