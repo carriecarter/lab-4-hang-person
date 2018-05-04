@@ -21,8 +21,18 @@ function loadWord(){
 
 }
 
-//testing pull request changes HEYYYYYY
+//guess letter input box and button 
+function guessLetter() {
+    var userguess = document.getElementById("guess-box").value;
+    document.getElementById("userguess").innerHTML = userguess;
+    console.log(userguess);
 
+    if (userguess === "") {
+        alert('Please guess a letter');
+    }
+
+    
+}
 
 function getRandomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max));
