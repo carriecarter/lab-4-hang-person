@@ -21,7 +21,7 @@ function loadWord(){
         var selectedCar = car.split("");
         console.log(selectedCar);
 
-        var p = document.getElementById('guess-word');
+        var p = document.getElementById('car-letters');
         p.textContent = (selectedCar);
 
 }
