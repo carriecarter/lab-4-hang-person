@@ -11,8 +11,6 @@ function loadWord(){
         
         car = listOfWords[index];
         console.log('selected car is ' + car);
-        // removes car from array
-        
         
         // returns randomly selected car
         console.log(words);
@@ -30,18 +28,23 @@ function loadWord(){
         var userguess = document.getElementById("guess-box").value;
         document.getElementById("userguess").innerHTML = userguess;
         console.log(userguess);
-        console.log('this is car' , car);
+        console.log('this is car being guessed' , car);
         if (userguess === "") {
             alert('Please guess a letter');
         }
         if (car.includes(userguess)) {
             correctGuess();
+
+            
         }
+        var p = document.getElementById('correct-guess');
+        p.textContent = (userguess);
 
         function correctGuess(){
-            document.getElementById("userguess").innerHTML = 'Good guess';
+        document.getElementById("userguess").innerHTML = 'Good guess';
+
         }
-        console.log() 
+        
 
         // var userguess = includes(selectedCar[i]);
         
