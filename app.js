@@ -11,7 +11,6 @@ function loadWord(){
         
         car = listOfWords[index];
         console.log('selected car is ' + car);
-        // removes car from array
         
         
         // returns randomly selected car
