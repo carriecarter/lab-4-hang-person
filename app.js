@@ -4,8 +4,6 @@
     
 // This selects a random word to be guessed by user
 function loadWord(){
-        var blanks = ['_'] 
-    // for(i = 0; i > 5; i++) {
         var listOfWords = ['Honda', 'BMW', 'Tesla', 'Mercedes', 'Audi', 'Porsche'];
         var index = getRandomIndex(listOfWords.length);
         console.log(index);
@@ -19,7 +17,7 @@ function loadWord(){
         selectedCar = car.split("");
         console.log('split value of selected car is' , selectedCar);
 
-        var p = document.getElementById('car-letters');
+        var p = document.getElementById('guess-word');
         p.textContent = (blanks);
 
        // var blanks = selectedCar;
