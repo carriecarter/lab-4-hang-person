@@ -17,12 +17,22 @@ function loadWord(){
         selectedCar = car.split("");
         console.log('split value of selected car is' , selectedCar);
 
-        var p = document.getElementById('guess-word');
-        p.textContent = (blanks);
+        //var p = document.getElementById('guess-word');
+        //p.textContent = (blanks);
 
-       // var blanks = selectedCar;
-        //p. textContent = document.getElementById('blank-spaces');
+        //creating array to display blanks 
 
+}
+createBlanks();
+
+var newArray = [];
+for (var i = 0; i < selectedCar.length; i++) {
+    newArray[i]= '_';
+}
+
+//show results to user
+function createBlanks() {
+    document.getElementById('blank-spaces').textContent = newArray.join('');
 }
 
 //guess letter input box and button 
