@@ -6,7 +6,7 @@
 function loadWord(){
         var listOfWords = ['Honda', 'BMW', 'Tesla', 'Mercedes', 'Audi', 'Porsche'];
         var index = getRandomIndex(listOfWords.length);
-        console.log(index);
+        console.log('car name position in the list', index);
         
         car = listOfWords[index];
         console.log('selected car is ' + car);
@@ -17,8 +17,8 @@ function loadWord(){
         selectedCar = car.split("");
         console.log('split value of selected car is' , selectedCar);
 
-        //var p = document.getElementById('guess-word');
-        //p.textContent = (blanks);
+        var p = document.getElementById('car-letters');
+        p.textContent = (selectedCar);
 
         //creating array to display blanks 
 
