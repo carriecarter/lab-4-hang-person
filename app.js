@@ -11,28 +11,29 @@ function loadWord(){
         car = listOfWords[index];
         console.log('selected car is ' + car);
         
-        
         // returns randomly selected car
         console.log(words);
 
         selectedCar = car.split("");
         console.log('split value of selected car is' , selectedCar);
 
-        var p = document.getElementById('guess-word');
-        p.textContent = (blanks);
+        //var p = document.getElementById('guess-word');
+        //p.textContent = (blanks);
 
-       // var blanks = selectedCar;
-        //p. textContent = document.getElementById('blank-spaces');
+        //creating array to display blanks 
+
 }
-        
-function fribbets() {
-    
+createBlanks();
+
+var newArray = [];
+for (var i = 0; i < selectedCar.length; i++) {
+    newArray[i]= '_';
 }
 
-        element.addEventListener("enter", fribbets);
-
-
-
+//show results to user
+function createBlanks() {
+    document.getElementById('blank-spaces').textContent = newArray.join('');
+}
 
 //guess letter input box and button 
     function guessLetter() {
@@ -57,6 +58,7 @@ function fribbets() {
 
         }
         
+
         // var userguess = includes(selectedCar[i]);
         
         // if (userguess = selectedCar[i]) {
@@ -65,7 +67,7 @@ function fribbets() {
         // console.log(userguess);
         // }
     }
-        console.log ('FRIBBETS')
+
     function getRandomIndex(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
