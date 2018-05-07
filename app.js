@@ -2,10 +2,7 @@
 /* exported correctLetter */
 'use-strict';
 
-    var car = null;
-    var selectedCar = null;
-    var letter
-
+  
 function getRandomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -13,24 +10,16 @@ function getRandomIndex(max) {
 // This selects a random word from the array in words.js to be guessed by user
 function loadWord(){
         var index = getRandomIndex(words.length);
-
         carToGuess = words[index];
         console.log('selected car to guess is ' + carToGuess);
 
         carToGuess = carToGuess.toLowerCase().split("");
         console.log('individual letters of car to guess' , carToGuess);
 
+        // eventually hide the letters on the page and replace with blanks
+        // for now this shows me the letters to guess on screen
         var p = document.getElementById('car-letters');
         p.textContent = (carToGuess);
-}
-
-var carToGuess;
-
-// Array for correct letters guessed with blanks
-
-var correctLetter = [];
-for(var i = 0; i < carToGuess.length; i++) {
-    correctLetter[i] = '_';
 }
 
 //guess letter input box and button 
@@ -44,16 +33,26 @@ function guessLetter() {
         alert('Please guess a letter');
     }
 
-    if (userGuess = carToGuess[i]) {
-        document.getElementById("user-guess").innerHTML = 'Good guess';
-            
-    }
+    for(var i = 0; i < loadWord.length; i++) {
         
-    var p = document.getElementById('correct-guess');
-    p.textContent = (userGuess);        
-
-    // clears text box for next guess
-    document.getElementById('user-guess').value = '';
-
+        if (userGuess.includes(carToGuess)) {
+            alert ('alert');
+            //document.getElementById("user-guess").innerHTML = 'Good guess';
+        }
     }
+                
     
+        
+    //var p = document.getElementById('correct-guess');
+    //p.textContent = (userGuess);        
+
+    
+}
+
+// Array for correct letters guessed with blanks
+
+var correctLetter = [];
+for(var i = 0; i < loadWord[i]; i++) {
+    correctLetter[i] = '_';
+}
+
