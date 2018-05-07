@@ -1,61 +1,47 @@
-//Did my Git Branching Work?
-    
+/* globals words */
+'use-strict';
+
     var car = null;
     var selectedCar = null;
-    
-// This selects a random word to be guessed by user
-function loadWord(){
-        var listOfWords = ['Honda', 'BMW', 'Tesla', 'Mercedes', 'Audi', 'Porsche'];
-        var index = getRandomIndex(listOfWords.length);
-        console.log('car name position in the list', index);
-        
-        car = listOfWords[index];
-        console.log('selected car is ' + car);
-        
-        // returns randomly selected car
-        console.log(words);
 
-        selectedCar = car.split("");
-        console.log('split value of selected car is' , selectedCar);
+function getRandomIndex(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+    
+// This selects a random word from the array in words.js to be guessed by user
+function loadWord(){
+        var index = getRandomIndex(words.length);
+
+        carToGuess = words[index];
+        console.log('selected car to guess is ' + carToGuess);
+
+        carToGuess = carToGuess.split("");
+        console.log('split value of car to guess is' , carToGuess);
+
 
         var p = document.getElementById('car-letters');
-        p.textContent = (selectedCar);
-
-        //creating array to display blanks 
+        p.textContent = (carToGuess);
 
 }
-createBlanks();
 
-var newArray = [];
-for (var i = 0; i < selectedCar.length; i++) {
-    newArray[i]= '_';
-}
-
-//show results to user
-function createBlanks() {
-    document.getElementById('blank-spaces').textContent = newArray.join('');
-}
+var carToGuess;
 
 //guess letter input box and button 
     function guessLetter() {
 
-        var userguess = document.getElementById("guess-box").value;
-        document.getElementById("userguess").innerHTML = userguess;
-        console.log(userguess);
-        console.log('this is car being guessed' , car);
+        var userGuess = document.getElementById("guess-box").value;
+        document.getElementById("user-guess").innerHTML = userGuess;
+        console.log(userGuess);
         
-        if (userguess === "") {
+        if (userGuess === "") {
             alert('Please guess a letter');
         }
-        if (car.includes(userguess)) {
-            correctGuess();
-
-        }
+        
         var p = document.getElementById('correct-guess');
-        p.textContent = (userguess);
+        p.textContent = ('the user guessed the letter ' , userGuess);
 
         function correctGuess(){
-        document.getElementById("userguess").innerHTML = 'Good guess';
+        document.getElementById("user-guess").innerHTML = 'Good guess';
 
         }
         
@@ -69,6 +55,14 @@ function createBlanks() {
         // }
     }
 
-    function getRandomIndex(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-    }
+    //createBlanks();
+
+//var newArray = [];
+//for (var i = 0; i < selectedCar.length; i++) {
+    //newArray[i]= '_';
+//}
+
+//show results to user
+//function createBlanks() {
+//    document.getElementById('blank-spaces').textContent = newArray.join('');
+//}

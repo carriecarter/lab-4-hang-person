@@ -1,3 +1,10 @@
 'use-strict';
 
-var words = ['Honda', 'BMW', 'Tesla', 'Mercedes', 'Audi', 'Porsche'];
+var words = [
+    'Honda', 
+    'BMW', 
+    'Tesla', 
+    'Mercedes', 
+    'Audi', 
+    'Porsche'
+];
