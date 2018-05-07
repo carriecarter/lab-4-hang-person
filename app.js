@@ -1,8 +1,10 @@
 /* globals words */
+/* exported correctLetter */
 'use-strict';
 
     var car = null;
     var selectedCar = null;
+    var letter
 
 function getRandomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -15,54 +17,43 @@ function loadWord(){
         carToGuess = words[index];
         console.log('selected car to guess is ' + carToGuess);
 
-        carToGuess = carToGuess.split("");
-        console.log('split value of car to guess is' , carToGuess);
-
+        carToGuess = carToGuess.toLowerCase().split("");
+        console.log('individual letters of car to guess' , carToGuess);
 
         var p = document.getElementById('car-letters');
         p.textContent = (carToGuess);
-
 }
 
 var carToGuess;
 
+// Array for correct letters guessed with blanks
+
+var correctLetter = [];
+for(var i = 0; i < carToGuess.length; i++) {
+    correctLetter[i] = '_';
+}
+
 //guess letter input box and button 
-    function guessLetter() {
+function guessLetter() {
 
-        var userGuess = document.getElementById("guess-box").value;
-        document.getElementById("user-guess").innerHTML = userGuess;
-        console.log(userGuess);
+    var userGuess = document.getElementById("guess-box").value;
+    document.getElementById("user-guess").innerHTML = userGuess;
+    console.log('the user guessed the letter ' , userGuess);
         
-        if (userGuess === "") {
-            alert('Please guess a letter');
-        }
-        
-        var p = document.getElementById('correct-guess');
-        p.textContent = ('the user guessed the letter ' , userGuess);
-
-        function correctGuess(){
-        document.getElementById("user-guess").innerHTML = 'Good guess';
-
-        }
-        
-
-        // var userguess = includes(selectedCar[i]);
-        
-        // if (userguess = selectedCar[i]) {
-        //     alert('Correct!');
-        
-        // console.log(userguess);
-        // }
+    if (userGuess === "") {
+        alert('Please guess a letter');
     }
 
-    //createBlanks();
+    if (userGuess = carToGuess[i]) {
+        document.getElementById("user-guess").innerHTML = 'Good guess';
+            
+    }
+        
+    var p = document.getElementById('correct-guess');
+    p.textContent = (userGuess);        
 
-//var newArray = [];
-//for (var i = 0; i < selectedCar.length; i++) {
-    //newArray[i]= '_';
-//}
+    // clears text box for next guess
+    document.getElementById('user-guess').value = '';
 
-//show results to user
-//function createBlanks() {
-//    document.getElementById('blank-spaces').textContent = newArray.join('');
-//}
+    }
+    
