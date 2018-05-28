@@ -1,6 +1,7 @@
+'use-strict';
+
 /* globals words */
 /* exported correctLetter */
-'use-strict';
 
   
 function getRandomIndex(max) {
@@ -43,9 +44,15 @@ function guessLetter() {
         alert('Please guess a letter');
     }
 
+    if(userGuess.length !== 1) {
+        alert('Guess one letter at a time please.');
+        return;
+    }
+
     if (carToGuess.includes(userGuess)) {
         var indexOfGuess = carToGuess.indexOf(userGuess);
         console.log(indexOfGuess);
+
         currentCar.splice(indexOfGuess, 1, userGuess);
         counter += 1;    
     }
@@ -56,13 +63,13 @@ function guessLetter() {
     if (counter === carToGuess.length + 5) {
         alert('WAH WAH WAH WAHHHHHHH');
     }
-    // inside if statement above- reset counter by re-declaring counter =0 and redeclare empty userGuessLetters
-
-
+    
     var p = document.getElementById('blank-spaces');
     p.textContent = (currentCar);
                        
 }
+
+
 
 
 
